@@ -1,0 +1,61 @@
+<div class="container text-center">
+    <div class="row">
+        <div class="col-1">
+            &nbsp;
+        </div>
+        <div class="col bg-white">
+            &nbsp;
+        </div>
+        <div class="col-1">
+            &nbsp;
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-1">
+            &nbsp;
+        </div>
+        <div class="col bg-white">
+            <p class="text-start fs-5">Editar - Agendamento de Potenciais Clientes</p>
+            <p class="text-start fs-6">Sistema Utilizado para agendamento de serviços.</p>
+            <p>
+                {{#each data}}
+                <form action="/atualizar/{{id}}" method="POST">
+                    <div class="mb-3 text-start">
+                        <label class="form-label">Sigla:</label>
+                        <input type="text" name="sigla" class="form-control" id="sigla" value="{{sigla}}">
+                    </div>
+                    <div class="mb-3 text-start">
+                        <label class="form-label">Nome:</label>
+                        <input type="text" name="nome" class="form-control" id="nome" value="{{nome}}">
+                    </div>
+                    <div class="mb-3 text-start">
+                        <label class="form-label">Dia:</label>
+                        <select name="dia" type="number" class="form-select" aria-label="Default select example" id="dia">
+                            <option value="1" {{#ifValues dia 1}}selected{{/ifValues}}>Segunda-Feira</option>
+                            <option value="2" {{#ifValues dia 2}}selected{{/ifValues}}>Terça-Feira</option>
+                            <option value="3" {{#ifValues dia 3}}selected{{/ifValues}}>Quarta-Feira</option>
+                            <option value="4" {{#ifValues dia 4}}selected{{/ifValues}}>Quinta-Feira</option>
+                            <option value="5" {{#ifValues dia 5}}selected{{/ifValues}}>Sexta-Feira</option>
+                            <option value="6" {{#ifValues dia 6}}selected{{/ifValues}}>Sábado</option>
+                        </select>
+                    </div>
+                    <div class="mb-3 text-start">
+                        <label class="form-label">Quant. Aulas:</label>
+                        <input type="number" name="quantAulas" class="form-control" id="quantAulas" value="{{quantAulas}}">
+                    </div>
+                    <div class="mb-3 text-start">
+                        <label class="form-label">Quant. Faltas:</label>
+                        <input type="number" name="quantFaltas" class="form-control" id="quantFaltas" value="{{quantFaltas}}">
+                    </div>
+                    <div class="mb-3 text-start">
+                        <button type="submit" class="btn btn-secondary">Editar</button>
+                    </div>
+                </form>
+                {{/each}}
+            </p>
+        </div>
+        <div class="col-1">
+            &nbsp;
+        </div>
+    </div>
+</div>
